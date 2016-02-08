@@ -76,7 +76,8 @@ public class ArrayTraversal {
         int steps = 64 * 1024 * 1024;
         int lengthMod = numbers.length - 1;
         for (int i = 0; i < steps; i++) {
-            numbers[(i * 16) & lengthMod]++; // x & lengthMod == x % complexNumbers.length
+            // if numbers.length is power of 2, x & lengthMod == x % numbers.length
+            numbers[(i * 16) & lengthMod]++;
         }
     }
 
